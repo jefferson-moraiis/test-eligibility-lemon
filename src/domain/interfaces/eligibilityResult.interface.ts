@@ -1,5 +1,5 @@
-export interface IEligibilityResult{
+export interface IEligibilityResult {
   eligible: boolean,
   reasonsIneligibility?: string[]
-  AnnualSavingsCO2?: string
+  annualSavingsCO2?: number
 }

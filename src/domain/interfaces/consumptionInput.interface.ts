@@ -1,7 +1,7 @@
-import {connectionTypesEnum,consumptionTypesEnum,modalityTariffEnum} from '../enums'
+import { connectionTypesEnum, consumptionTypesEnum, modalityTariffEnum } from '../enums'
 
 export interface IConsumptionInput {
-  documentNumber: String ,
+  documentNumber: String,
   connectionType: connectionTypesEnum,
   consumptionType: consumptionTypesEnum,
   modalityTariff: modalityTariffEnum,
