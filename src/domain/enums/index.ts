@@ -1,3 +1,3 @@
-export * from './connectionTypesEnum'
-export * from './consumptionTypesEnum'
-export * from './modalityTariffEnum'
+export * from './connectionTypes.enum'
+export * from './consumptionTypes.enum'
+export * from './modalityTariff.enum'
