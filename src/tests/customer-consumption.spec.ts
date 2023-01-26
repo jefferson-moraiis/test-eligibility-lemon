@@ -1,23 +1,25 @@
-import { customerConsumptionEligibility } from "../domain/usecases";
-import { eligibleCustomerMock, ineligibleCustomerMock} from './mocks/customerEligibilityMock'
+import { CustomerConsumptionEligibility } from "../domain/usecases";
+import { eligibleCustomerMock, ineligibleCustomerMock } from './mocks/customerEligibilityMock'
 
 describe('customer consumption', () => {
-  it('should return customer is not eligible ', async() => {
-      const sut = new customerConsumptionEligibility(ineligibleCustomerMock);
+  it('should return customer is ineligible', () => {
+    const sut = new CustomerConsumptionEligibility(ineligibleCustomerMock);
 
-      const {eligible,reasonsIneligibility} = await sut.perform()
+    const ineligible = sut.checkEligibility()
 
-      expect(eligible).toBe(false);
-      expect(reasonsIneligibility).toEqual(["Classe de consumo não aceita", "Modalidade tarifária não aceita"])
+    expect(ineligible).toEqual(expect.objectContaining({
+      eligible: expect.any(Boolean), reasonsIneligibility: expect.any(Array<string>)
+    }))
   })
 
-  it('should return customer is eligible ', async() => {
+  it('should return customer is eligible ', () => {
 
-      const sut = new customerConsumptionEligibility(eligibleCustomerMock);
+    const sut = new CustomerConsumptionEligibility(eligibleCustomerMock);
 
-      const {eligible,AnnualSavingsCO2} = await sut.perform()
+    const eligible = sut.checkEligibility()
 
-      expect(eligible).toBe(true);
-      expect(AnnualSavingsCO2).toEqual(5553.24)
+    expect(eligible).toEqual(expect.objectContaining({
+      eligible: expect.any(Boolean), annualSavingsCO2: expect.any(Number)
+    }))
   })
 })

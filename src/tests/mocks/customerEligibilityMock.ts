@@ -1,7 +1,7 @@
-import { customerConsumption } from '../../domain/interfaces/interface';
-import { connectionTypesEnum,consumptionTypesEnum,modalityTariffEnum } from "../../domain/enum";
+import { IConsumptionInput } from '../../domain/interfaces/consumptionInput.interface';
+import { connectionTypesEnum, consumptionTypesEnum, modalityTariffEnum } from "../../domain/enums";
 
-export const ineligibleCustomerMock:customerConsumption = {
+export const ineligibleCustomerMock: IConsumptionInput = {
   documentNumber: '',
   connectionType: connectionTypesEnum.triphasic,
   consumptionType: consumptionTypesEnum.publicPower,
@@ -23,7 +23,7 @@ export const ineligibleCustomerMock:customerConsumption = {
   ]
 }
 
-export const eligibleCustomerMock:customerConsumption = {
+export const eligibleCustomerMock: IConsumptionInput = {
   documentNumber: '',
   connectionType: connectionTypesEnum.singlePhase,
   consumptionType: consumptionTypesEnum.residential,
