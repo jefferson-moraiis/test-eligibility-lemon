@@ -1,14 +1,16 @@
 import { Request, Response } from 'express'
 import { CustomerConsumptionEligibility } from '../../domain/usecases'
-
+import { checkBody } from '../entities/inputCheck.entities';
 export class ConsumptionEligibilityController {
 
-  handle(request: Request, response: Response) {
+  async handle({body}: Request, response: Response) {
+
     try {
-      const result = new CustomerConsumptionEligibility(request.body).checkEligibility()
+      const data = await checkBody(body);
+      const result = new CustomerConsumptionEligibility(data).checkEligibility
       return response.status(200).json(result)
     } catch (error) {
-      throw new Error(`Error check customer eligibility:${error.data}`);
+      response.status(500).json(error.message)
     }
   }
 }
