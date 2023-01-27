@@ -1,20 +1,16 @@
 export class ConsumptionCalculation {
-  constructor(private readonly historyConsumption: number[]) {
-    this.historyConsumption = historyConsumption;
-  }
-
-  averageCalculation(): number {
+  averageCalculation(historyConsumption: number[]): number {
     return (
-      this.historyConsumption
+      historyConsumption
         .slice(-12)
         .reduce((acc, current) => acc + current) /
-      this.historyConsumption.length
+      historyConsumption.length
     );
   }
 
-  c02Calculation(): number {
+  c02Calculation(historyConsumption: number[]): number {
     const kgInC02 = 84 / 1000;
-    const averageConsumption = this.averageCalculation();
+    const averageConsumption = this.averageCalculation(historyConsumption);
     const annualProjectionConsumption = averageConsumption * 12;
     return Number((annualProjectionConsumption * kgInC02).toFixed(2));
   }

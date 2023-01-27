@@ -2,7 +2,7 @@ import { IConsumptionInput } from '../../domain/interfaces/consumptionInput.inte
 import { connectionTypesEnum, consumptionTypesEnum, modalityTariffEnum } from "../../domain/enums";
 
 export const ineligibleCustomerMock: IConsumptionInput = {
-  documentNumber: '',
+  documentNumber: '14041737706',
   connectionType: connectionTypesEnum.triphasic,
   consumptionType: consumptionTypesEnum.publicPower,
   modalityTariff: modalityTariffEnum.blue,
@@ -24,7 +24,7 @@ export const ineligibleCustomerMock: IConsumptionInput = {
 }
 
 export const eligibleCustomerMock: IConsumptionInput = {
-  documentNumber: '',
+  documentNumber: '14041737706',
   connectionType: connectionTypesEnum.singlePhase,
   consumptionType: consumptionTypesEnum.residential,
   modalityTariff: modalityTariffEnum.white,

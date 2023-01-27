@@ -7,7 +7,7 @@ export class ConsumptionEligibilityController {
 
     try {
       const data = await checkBody(body);
-      const result = new CustomerConsumptionEligibility(data).checkEligibility
+      const result = new CustomerConsumptionEligibility(data).checkEligibility()
       return response.status(200).json(result)
     } catch (error) {
       response.status(500).json(error.message)
