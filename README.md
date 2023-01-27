@@ -52,7 +52,6 @@ O projeto foi desenvolvido através de desafio proposto pela empresa Lemon para 
 * Typescript
 * Git
 * Jest
-* Validator
 * Express
 * Husky
 * Lint Staged
