@@ -57,6 +57,7 @@ O projeto foi desenvolvido através de desafio proposto pela empresa Lemon para 
 * Lint Staged
 * Eslint
 * Nodemon
+* Joi
 
 ## **Estrutura de pasta do projeto**
 ```
