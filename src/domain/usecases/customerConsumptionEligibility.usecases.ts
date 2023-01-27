@@ -27,7 +27,7 @@ export class CustomerConsumptionEligibility {
       this.check.checkConsumptionType(),
       this.check.checkModalityTariff()
     ]
-    const isEligible = checkEligibility.filter((result) => result === true).length > 0
+    const isEligible = checkEligibility.filter((result) => result === true).length >= 3
     const ineligible = checkEligibility.filter((result) => result !== true) as []
     return isEligible ? this.eligibilityResult(this.consumption.c02Calculation())
       : this.ineligibleResult(ineligible)
